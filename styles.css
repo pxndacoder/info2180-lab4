@@ -1,17 +1,163 @@
+/* GLOBAL */
 body {
-  background-color: #777;
-  color: white;
-  font-family: Arial, sans-serif;
-  text-align: center;
-  padding: 50px;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  background-color: #f4f4f4;
+  margin: 0;
+  padding: 25px;
 }
 
+/* PAGE CONTAINER */
+.container {
+  max-width: 850px;
+  margin: 0 auto;
+  background-color: #fff;
+  border-radius: 6px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+  padding: 30px 40px;
+}
+
+/* HEADER */
 h1 {
-  font-size: 2em;
+  background-color: #86bdf3;
+  color: #fff;
+  text-align: center;
+  font-size: 1.6em;
+  letter-spacing: 1px;
+  padding: 20px;
+  margin: -30px -40px 25px -40px;
+  border-radius: 6px 6px 0 0;
+  text-transform: uppercase;
 }
 
-button {
+/* SEARCH SECTION */
+.search-section {
+  margin-bottom: 35px;
+}
+
+.search-section label {
+  display: block;
+  font-weight: bold;
+  color: #222;
+  margin-bottom: 6px;
+}
+
+.search-bar {
+  display: flex;
+  align-items: stretch;
+  gap: 2px;
+}
+
+#searchField {
+  flex: 1;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px 0 0 4px;
+  font-size: 15px;
+}
+
+#searchField::placeholder {
+  color: #aaa;
+  font-style: italic;
+}
+
+#searchButton {
+  background-color: #d33;
+  color: #fff;
+  border: none;
+  padding: 0 24px;
+  font-weight: 600;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 15px;
+  transition: background-color 0.3s;
+}
+
+#searchButton:hover {
+  background-color: #b52b2b;
+}
+
+/* RESULT HEADER */
+h2 {
+  color: #2c3e50;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 6px;
+  font-size: 1.2em;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+/* RESULT AREA */
+#result {
   margin-top: 20px;
-  padding: 10px 20px;
-  font-size: 1em;
+  line-height: 1;
+  color: #1a1a1a;
+}
+
+/* FULL HERO LIST */
+#result ul {
+  list-style-type: disc;
+  padding-left: 40px;
+}
+
+#result li {
+  margin-bottom: 0.4em;
+}
+
+/* HERO PROFILE */
+.hero-profile {
+  padding: 18px 0;
+  max-width: 700px;
+}
+
+.hero-profile h3 {
+  color: #000;
+  font-weight: 800;
+  text-transform: uppercase;
+  font-size: 1.1em;
+  margin-bottom: 2px;
+}
+
+.hero-profile h4 {
+  font-size: 0.95em;
+  font-weight: 700;
+  color: #000000;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+  letter-spacing: 0.6px;
+}
+
+.hero-profile p {
+  color: #333;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* NOT FOUND MESSAGE */
+.not-found {
+  color: #c0392b;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+  margin-top: 15px;
+  font-size: 0.95em;
+}
+
+/* RESPONSIVE */
+@media (max-width: 600px) {
+  #searchField {
+    font-size: 14px;
+  }
+
+  #searchButton {
+    padding: 0 18px;
+    font-size: 14px;
+  }
+
+  .container {
+    padding: 20px;
+  }
+
+  h1 {
+    font-size: 1.4em;
+  }
 }

@@ -63,10 +63,36 @@ $superheroes = [
   ], 
 ];
 
-?>
+$query = filter_input(INPUT_GET, 'query', FILTER_SANITIZE_STRING);
 
-<ul>
-<?php foreach ($superheroes as $superhero): ?>
-  <li><?= $superhero['alias']; ?></li>
-<?php endforeach; ?>
-</ul>
+if ($query) {
+    $found = false;
+
+    foreach ($superheroes as $hero) {
+        
+        if (
+            strcasecmp($query, $hero['alias']) === 0 ||
+            strcasecmp($query, $hero['name']) === 0
+        ) {
+            $found = true;
+            echo "<div class='hero-profile'>";
+            echo "<h3>" . htmlspecialchars($hero['alias']) . "</h3>";
+            echo "<h4>A.K.A. " . strtoupper(htmlspecialchars($hero['name'])) . "</h4>";
+            echo "<p>" . htmlspecialchars($hero['biography']) . "</p>";
+            echo "</div>";
+            break;
+        }
+    }
+
+    if (!$found) {
+        echo "<p class='not-found'>SUPERHERO NOT FOUND</p>";
+    }
+} else {
+    // No query — return the full list
+    echo "<ul>";
+    foreach ($superheroes as $hero) {
+        echo "<li>{$hero['alias']}</li>";
+    }
+    echo "</ul>";
+}
+?>

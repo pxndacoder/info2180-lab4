@@ -1,22 +1,18 @@
-window.addEventListener("DOMContentLoaded", () => {
-  const searchBtn = document.getElementById("searchBtn");
-  const searchField = document.getElementById("searchField");
-  const resultDiv = document.getElementById("result");
+document.addEventListener("DOMContentLoaded", () => {
+  const searchButton = document.getElementById("searchButton");
 
-  searchBtn.addEventListener("click", () => {
-    const query = searchField.value.trim();
-    const url = query
-      ? `superheroes.php?query=${encodeURIComponent(query)}`
-      : "superheroes.php";
-
-    fetch(url)
-      .then((response) => response.text())
+  searchButton.addEventListener("click", () => {
+    fetch("superheroes.php")
+      .then((response) => {
+        // The server returns plain text (HTML formatted list)
+        return response.text();
+      })
       .then((data) => {
-        resultDiv.innerHTML = data;
+        // Display the returned list in an alert box
+        alert(data);
       })
       .catch((error) => {
-        console.error("Error fetching data:", error);
-        resultDiv.innerHTML = "<p>Error loading data.</p>";
+        console.error("Error fetching superheroes:", error);
       });
   });
 });

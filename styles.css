@@ -1,86 +1,17 @@
-/* Basic reset */
 body {
-  margin: 0;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background-color: #f8f8f8;
-}
-
-/* Header styling */
-header {
-  background-color: #224f7a;
+  background-color: #777;
   color: white;
+  font-family: Arial, sans-serif;
   text-align: center;
-  padding: 20px 0;
+  padding: 50px;
 }
 
-main {
-  max-width: 700px;
-  margin: 40px auto;
-  background: white;
-  padding: 25px 30px;
-  border-radius: 6px;
-  box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+h1 {
+  font-size: 2em;
 }
 
-label {
-  font-weight: bold;
-  color: #333;
-}
-
-.search-controls {
-  display: flex;
-  gap: 2px;
-  margin-top: 10px;
-}
-
-#searchField {
-  flex: 1;
-  padding: 10px;
-  font-size: 15px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-}
-
-#searchBtn {
-  background-color: #c0392b;
-  color: white;
-  border: none;
-  border-radius: 4px;
+button {
+  margin-top: 20px;
   padding: 10px 20px;
-  font-weight: bold;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-#searchBtn:hover {
-  background-color: #a52b1f;
-}
-
-#results-section {
-  margin-top: 30px;
-  border-top: 2px solid #eee;
-  padding-top: 20px;
-}
-
-#result {
-  margin-top: 15px;
-}
-
-#result h3 {
-  margin: 5px 0;
-  color: #224f7a;
-}
-
-#result h4 {
-  margin: 0;
-  color: #555;
-}
-
-#result p {
-  color: #444;
-}
-
-#result .not-found {
-  color: #c0392b;
-  font-weight: bold;
+  font-size: 1em;
 }
